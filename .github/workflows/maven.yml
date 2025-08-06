@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, Runner1]  # use your self-hosted runner
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v4
