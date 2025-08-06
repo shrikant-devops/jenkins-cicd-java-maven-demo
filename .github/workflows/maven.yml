@@ -21,5 +21,13 @@ jobs:
       - name: Build with Maven
         run: mvn package
 
-      - name: Show JAR File
+      - name: Show WAR File
         run: ls -lh target/*.war
+
+      - name: Deploy WAR to Tomcat
+        run: |
+          echo "Deploying to Tomcat..."
+          curl -v --upload-file target/demo.war \
+            "$TOMCAT_HOST/manager/text/deploy?path=/demo&update=true" \
+            --user "$TOMCAT_USER:$TOMCAT_PASSWORD"
+        
