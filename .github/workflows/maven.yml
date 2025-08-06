@@ -22,4 +22,4 @@ jobs:
         run: mvn package
 
       - name: Show JAR File
-        run: ls -lh target/*.jar
+        run: ls -lh target/*.war
