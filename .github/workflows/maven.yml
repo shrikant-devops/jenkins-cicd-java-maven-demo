@@ -26,8 +26,7 @@ jobs:
 
       - name: Deploy WAR to Tomcat
         run: |
-          echo "Deploying to Tomcat..."
-          curl -v --upload-file target/demo.war \
-            "$TOMCAT_HOST/manager/text/deploy?path=/demo&update=true" \
-            --user "$TOMCAT_USER:$TOMCAT_PASSWORD"
+         curl -v --upload-file target/demo.war \
+        "http://localhost:8080/manager/text/deploy?path=/demo&update=true" \
+        --user "admin:admin"
         
