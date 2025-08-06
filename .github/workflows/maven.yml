@@ -26,6 +26,6 @@ jobs:
 
       - name: Deploy WAR to Tomcat
         run: curl -v --upload-file target/demo.war \
-             "http://localhost:8080/manager/text/deploy?path=/demo&update=true" \
+             "http://13.233.237.24:8080/manager/text/deploy?path=/demo&update=true" \
              --user "admin:admin"
         
