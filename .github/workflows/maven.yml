@@ -25,8 +25,7 @@ jobs:
         run: ls -lh target/*.war
 
       - name: Deploy WAR to Tomcat
-        run: |
-         curl -v --upload-file target/demo.war \
-        "http://localhost:8080/manager/text/deploy?path=/demo&update=true" \
-        --user "admin:admin"
+        run: curl -v --upload-file target/demo.war \
+             "http://localhost:8080/manager/text/deploy?path=/demo&update=true" \
+             --user "admin:admin"
         
